@@ -79,3 +79,8 @@ Put Reset Subtitles button along with the toggle button to the bottom
 Gave both buttons styles like the SFX buttons by adding a otrBtn class similar to sfxBtn class
 Changed the main body background color from RGB to HEX
 Raised subtitles a bit
+
+Version 1.2.3 (14/04/2026 17:43):
+Moved & Published the project to GitHub
+Version naming changed from 0.2 to 1.2
+The soundboard is up in the internet! Visit here https://minhtridotnet.github.io/neuro-sama-soundboard/
