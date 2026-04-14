@@ -1,0 +1,81 @@
+Neuro-sama Soundboard
+Made by minhtridotnet
+
+Changelogs:
+
+Version 0.1.0 (11/02/2026 1:05):
+First version
+3 sound effects: Filtered, F-word, Someone tell Vedal there is a problem with my AI
+Pink background
+First Coffee font (unused)
+
+Version 0.1.1 (11/02/2026 10:05):
+Organized sounds, fonts, images,... into folders
+
+Version 0.1.2 (11/02/2026 11:55):
+Added version number in Soundboard.html
+Added 3 sound effects: No, Shut up, Spoiler alert
+
+Version 0.1.2_1 (11/02/2026 12:13):
+Removed sound effect Shut up because the sound is from Evil Neuro
+I'll create the Evil Neuro Soundboard soon (note is that Evil Neuro's voice has multiple variations)
+
+Version 0.1.3 (11/02/2026 13:56):
+Redesigned the button
+
+Version 0.1.4 (16/02/2026 19:43):
+Added text stroke to the title
+
+Version 0.1.4_1 (16/02/2026 20:04):
+I don't remember :) It was missing from the changelog, and I wrote this in 05/04/2026
+
+Version 0.1.5 (20/02/2026 10:40):
+Added sound effect Uhhh
+
+Version 0.1.6 (04/03/2026 22:08):
+Added sound effect STOP
+
+Version 0.1.6_1 (04/03/2026 22:28):
+(Mostly) removed Uhhh background noise
+Reduced STOP volume and shortened the timing
+
+Version 0.1.7 (06/04/2026 00:07):
+Changed title font from First Coffee to Sobiscuit (The Neuro-sama official logo font)
+Changed title color from White (#FFFFFF) to Light Cyan (#BBFDFF)
+Note from version 0.1.2_1: The Shut up sound is actually from Neuro-sama, but sped up by 150%. I'm considering whether to add it back or not.
+
+Version 0.1.7_1 (06/04/2026 0:27):
+Added back the Shut up sound, with a 150% note in it
+
+Version 0.1.8 (09/04/2026 14:09):
+Added sound effect Do you get the fucking joke now?
+
+Version 0.1.8_1 (09/04/2026 22:19):
+Added sound effect GUYS DOOR IS FRICKING STUCK and EGGS
+
+Version 0.1.9 (11/04/2026 17:05):
+Added Changelogs button to view this text file in the new tab
+Changed the "150%" in Shut up sound to "sped up"
+Note: I'll learn more about Github and will maybe move this project to it for convenience.
+Planned in Version 0.2: a "subtitle" in the bottom of the screen. I'm not very good at doing this, so I'll need some AI help for this.
+
+Version 0.2.0 (11/04/2026 18:28):
+Main:
+Rewritten half of the code
+Added subtitles at the bottom
+Small:
+Reduced title text stroke from 1px to 0.5px
+
+Version 0.2.1 (11/04/2026 19:12):
+Renamed some stuff
+Added Reset Subtitles button (functional but unformatted)
+Note: Starting with this version, the version naming will be: +0.1 for a new feature, +0.0.1 for bug fix/small changes, +0.0.0_1 for new sound effects/sound effect changes
+Currently known bug: subtitles can take up all of the screen, making user unable to press anything. Also, I am working on a solution to get margin working on subtitles
+Planned: Adding a toggle to enable/disable subtitles
+
+Version 0.2.2 (14/04/2026 15:00):
+Added a toggle button to enable/disable subtitles
+Put Reset Subtitles button along with the toggle button to the bottom
+Gave both buttons styles like the SFX buttons by adding a otrBtn class similar to sfxBtn class
+Changed the main body background color from RGB to HEX
+Raised subtitles a bit

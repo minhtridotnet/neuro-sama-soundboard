@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Neuro-sama Soundboard</title>
+        <style>
+            /* First Coffee font: Doesn't look good on screen. I'll use Helvetica for now */
+            @font-face {
+                font-family: 'First Coffee';
+                src: url('Fonts/First Coffee.ttf'), url('https://www.fontmirror.com/app_public/files/t/22/2024/10/First%20Coffee.ttf');
+                font-weight: 100;
+            }
+            @font-face {
+                font-family: 'Sobiscuit';
+                src: url('Fonts/Sobiscuit.ttf');
+                font-weight: 100;
+            }
+            body {
+                background-color: #FFAFAC;
+            }
+            h1 {
+                -webkit-text-stroke: 0.5px black;
+                color: #bbfdff;
+                text-shadow:
+                    2px 2px 0 #000000;
+                font-family: 'Sobiscuit', 'First Coffee', Helvetica, sans-serif;
+            }
+            p {
+                color: white;
+                text-shadow: 1px 1px #000000;
+                font-family: Helvetica, Arial, sans-serif;
+            }
+            .sfxBtn {
+                background-color: #FFFFFF;
+                border: none;
+                color: black;
+                padding: 16px 16px;
+                text-align: center;
+                text-decoration: none;
+                text-shadow: 1px 1px #bebebe;
+                font-family: Helvetica, Arial, sans-serif;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                box-shadow: 2px 2px
+            }
+            .otrBtn {
+                background-color: #FFFFFF;
+                border: none;
+                color: black;
+                padding: 6px 6px;
+                text-align: center;
+                text-decoration: none;
+                text-shadow: 1px 1px #bebebe;
+                font-family: Helvetica, Arial, sans-serif;
+                display: inline-block;
+                font-size: 14px;
+                margin: 4px 2px;
+                cursor: pointer;
+                box-shadow: 2px 2px
+            }
+            .right {
+                float: right;
+            }
+            .left {
+                float: left;
+            }
+            #rstBtn {
+                position: fixed;
+                bottom: 4px;
+                left: 4px;
+                z-index: 2;
+            }
+            #subTgBtn {
+                position: fixed;
+                bottom: 4px;
+                left: 120px;
+                z-index: 2;
+            }
+            #subtitles {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                /* text */
+                color: white;
+                text-align: center;
+                padding: 32px 0px;
+                margin: 0px auto;
+                z-index: 1;
+                display: block;
+                font-family: 'First Coffee', Helvetica, sans-serif;
+                font-size: clamp(1rem, 2.5vw, 3rem);
+                -webkit-text-stroke: 1px #451928;
+                text-shadow: 1.5px 1.5px #45192880;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 class="left">Neuro-sama Soundboard</h1> <!-- Title -->
+            <a class="right" href="Changelogs.txt" target="_blank">
+                <button class="otrBtn" type="button">Changelogs</button> <!-- Opens Changelogs.txt in new tab -->
+            </a>
+            <div style="clear:both;"></div>
+        </div>
+        <p>Version 0.2.2</p> <!-- Version number -->
+        <div> <!-- All sound effect buttons here, with its sound path and custom text (optional) -->
+            <button class="sfxBtn" sound="Sounds/Neuro-sama Filtered.mp3" type="button">Filtered</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama F-word.mp3" custom-text="FUCK">F-word</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3">Someone tell Vedal there is a problem with my AI</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama No.mp3">No</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama Shut up.mp3" custom-text="Shut up">Shut up (sped up)</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama Spoiler alert.mp3">Spoiler alert</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama Uhhh.mp3">Uhhh</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama STOP.mp3">STOP</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama Do you get the fucking joke now.mp3">Do you get the fucking joke now?</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama GUYS DOOR IS FRICKING STUCK.mp3">GUYS DOOR IS FRICKING STUCK</button>
+            <button class="sfxBtn" sound="Sounds/Neuro-sama EGGS.mp3">EGGS</button>
+
+        </div>
+        <div>
+            <button class="otrBtn" id="rstBtn" onclick="resetSubtitles()">Reset Subtitles</button>
+            <button class="otrBtn" id="subTgBtn" onclick="toggleSubtitles()">Disable Subtitles</button>
+        </div>
+        <div id="subtitles"></div> <!-- This is where subtitles is located in -->
+        
+        <script> // Scripts that play the sound effect, run the subtitles, and reset the subtitles
+            const subtitleDisplay = document.getElementById('subtitles');
+            const buttons = document.querySelectorAll('.sfxBtn');
+            let resetTimer;
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Check if there is a "custom-text" attribute in the button. If no then use the innerText one
+                    let text = button.getAttribute('custom-text') || button.innerText;
+
+                    // Add period if no punctuation from the text
+                    if (!/[.!?]$/.test(text)) {
+                        text += '.';
+                    }
+
+                    // Play sound using the "sound" attribute in the button
+                    const soundPath = button.getAttribute('sound');
+                    new Audio(soundPath).play();
+                    
+                    // Append the text to existing ones
+                    subtitleDisplay.innerText += (subtitleDisplay.innerText ? ' ' : '') + text;
+
+                    // Reset 7 seconds timer on inactivity
+                    clearTimeout(resetTimer);
+                    resetTimer = setTimeout(() => {
+                        subtitleDisplay.innerText = '';
+                    }, 7000);
+                });
+            });
+
+            // Button to reset subtitles if needed
+            rstBtn.addEventListener('click', () => {
+                subtitleDisplay.innerText = '';
+                clearTimeout(inactivityTimer);
+            });
+
+            // Button to toggle subtitles
+            function toggleSubtitles() {
+            var x = document.getElementById("subtitles");
+            var btn = document.getElementById("subTgBtn")
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                btn.innerHTML = "Disable Subtitles"
+            } else {
+                x.style.display = "none";
+                btn.innerHTML = "Enable Subtitles"
+            }
+            }
+        </script>
+    </body>
+</html>
