@@ -2,13 +2,15 @@
 <html>
     <head>
         <title>Neuro-sama Soundboard</title>
+        <link rel="icon" href="Images/icon.png">
         <style>
-            /* First Coffee font: Doesn't look good on screen. I'll use Helvetica for now */
+            /* First Coffee font: Used for subtitles, like in the actual stream */
             @font-face {
                 font-family: 'First Coffee';
                 src: url('Fonts/First Coffee.ttf'), url('https://www.fontmirror.com/app_public/files/t/22/2024/10/First%20Coffee.ttf');
                 font-weight: 100;
             }
+            /* Sobiscuit font: Used for the title of the website. It is the font used for the official Neuro-sama logo */
             @font-face {
                 font-family: 'Sobiscuit';
                 src: url('Fonts/Sobiscuit.ttf');
@@ -22,13 +24,14 @@
                 color: #bbfdff;
                 text-shadow:
                     2px 2px 0 #000000;
-                font-family: 'Sobiscuit', 'First Coffee', Helvetica, sans-serif;
+                font-family: 'Sobiscuit', Helvetica, sans-serif;
             }
             p {
                 color: white;
                 text-shadow: 1px 1px #000000;
                 font-family: Helvetica, Arial, sans-serif;
             }
+            /* Styles for the sound effects buttons */
             .sfxBtn {
                 background-color: #FFFFFF;
                 border: none;
@@ -44,6 +47,7 @@
                 cursor: pointer;
                 box-shadow: 2px 2px
             }
+            /* Styles for other buttons */
             .otrBtn {
                 background-color: #FFFFFF;
                 border: none;
@@ -65,18 +69,21 @@
             .left {
                 float: left;
             }
+            /* Styles for the reset subtitles button id */
             #rstBtn {
                 position: fixed;
                 bottom: 4px;
                 left: 4px;
                 z-index: 2;
             }
+            /* Styles for the subtitles toggle button id */
             #subTgBtn {
                 position: fixed;
                 bottom: 4px;
                 left: 120px;
                 z-index: 2;
             }
+            /* Styles for the subtitles id */
             #subtitles {
                 position: fixed;
                 bottom: 0;

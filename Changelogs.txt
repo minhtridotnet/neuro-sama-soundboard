@@ -83,4 +83,9 @@ Raised subtitles a bit
 Version 1.2.3 (14/04/2026 17:43):
 Moved & Published the project to GitHub
 Version naming changed from 0.2 to 1.2
+The soundboard actually worked as intended at the beginning of its creation, so the 0 at the beginning (aka beta) is not needed. Because of that, I changed the naming from 0.2.2 to 1.2.3
 The soundboard is up in the internet! Visit here https://minhtridotnet.github.io/neuro-sama-soundboard/
+Added Neuro-sama icon for the website icon
+Changed some description inside the html and removed First Coffee font as secondary font for the title
+
+Note: This Changelogs.txt file will maybe abandoned in the future, as I've uploaded this to GitHub, because it tracks all of the changes I made, hence no longer needing this changelogs file anymore. It will still be kept because of the versions prior to 1.2.3 that I wrote when it was local.
