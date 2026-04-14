@@ -89,3 +89,6 @@ Added Neuro-sama icon for the website icon
 Changed some description inside the html and removed First Coffee font as secondary font for the title
 
 Note: This Changelogs.txt file will maybe abandoned in the future, as I've uploaded this to GitHub, because it tracks all of the changes I made, hence no longer needing this changelogs file anymore. It will still be kept because of the versions prior to 1.2.3 that I wrote when it was local.
+
+Version 1.2.4 (14/04/2026 19:17):
+Subtitles are now disabled by default
