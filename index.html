@@ -111,7 +111,22 @@
             </a>
             <div style="clear:both;"></div>
         </div>
-        <p>Version 1.2.4</p> <!-- Version number -->
+        <p>Version 1.2.5</p> <!-- Version number -->
+
+        <div id="audio-preloader"> <!-- Preloads audio to ensure low latency -->
+            <audio preload="auto"><source src="Sounds/Neuro-sama Filtered.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama F-word.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama No.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama Shut up.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama Spoiler alert.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama Uhhh.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama STOP.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama Do you get the fucking joke now.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama GUYS DOOR IS FRICKING STUCK.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama EGGS.mp3" type="audio/mpeg"></audio>
+        </div>
+
         <div> <!-- All sound effect buttons here, with its sound path and custom text (optional) -->
             <button class="sfxBtn" sound="Sounds/Neuro-sama Filtered.mp3" type="button">Filtered</button>
             <button class="sfxBtn" sound="Sounds/Neuro-sama F-word.mp3" custom-text="FUCK">F-word</button>
@@ -126,10 +141,12 @@
             <button class="sfxBtn" sound="Sounds/Neuro-sama EGGS.mp3">EGGS</button>
 
         </div>
+
         <div>
             <button class="otrBtn" id="rstBtn" onclick="resetSubtitles()">Reset Subtitles</button>
             <button class="otrBtn" id="subTgBtn" onclick="toggleSubtitles()">Enable Subtitles</button>
         </div>
+
         <div id="subtitles"></div> <!-- This is where subtitles is located in -->
         
         <script> // Scripts that play the sound effect, run the subtitles, and reset the subtitles
@@ -172,12 +189,12 @@
             function toggleSubtitles() {
             var x = document.getElementById("subtitles");
             var btn = document.getElementById("subTgBtn")
-            if (x.style.display === "none") {
-                x.style.display = "block";
-                btn.innerHTML = "Disable Subtitles"
-            } else {
+            if (x.style.display === "block") {
                 x.style.display = "none";
                 btn.innerHTML = "Enable Subtitles"
+            } else {
+                x.style.display = "block";
+                btn.innerHTML = "Disable Subtitles"
             }
             }
         </script>
