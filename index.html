@@ -19,6 +19,11 @@
             }
             body {
                 background-color: #FFAFAC;
+                background-image: none;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
             }
             h1 {
                 -webkit-text-stroke: 0.5px black;
@@ -84,6 +89,13 @@
                 left: 120px;
                 z-index: 2;
             }
+            /* Styles for the background image toggle button id */
+            #bgiTgBtn {
+                position: fixed;
+                bottom: 4px;
+                right: 4px;
+                z-index: 2;
+            }
             /* Styles for the subtitles id */
             #subtitles {
                 position: fixed;
@@ -112,7 +124,7 @@
             </a>
             <div style="clear:both;"></div>
         </div>
-        <p>Version 1.2.5</p> <!-- Version number -->
+        <p>Version 1.2.6</p> <!-- Version number -->
 
         <div id="audio-preloader"> <!-- Preloads audio to ensure low latency -->
             <audio preload="auto"><source src="Sounds/Neuro-sama Filtered.mp3" type="audio/mpeg"></audio>
@@ -144,8 +156,9 @@
         </div>
 
         <div>
-            <button class="otrBtn" id="rstBtn" onclick="resetSubtitles()">Reset Subtitles</button>
+            <button class="otrBtn" id="rstBtn">Reset Subtitles</button>
             <button class="otrBtn" id="subTgBtn" onclick="toggleSubtitles()">Enable Subtitles</button>
+            <button class="otrBtn" id="bgiTgBtn">Switch Background</button>
         </div>
 
         <div id="subtitles"></div> <!-- This is where subtitles is located in -->
@@ -188,16 +201,34 @@
 
             // Button to toggle subtitles
             function toggleSubtitles() {
-            var x = document.getElementById("subtitles");
+            var sub = document.getElementById("subtitles");
             var btn = document.getElementById("subTgBtn")
-            if (x.style.display === "block") {
-                x.style.display = "none";
+            if (sub.style.display === "block") {
+                sub.style.display = "none";
                 btn.innerHTML = "Enable Subtitles"
             } else {
-                x.style.display = "block";
+                sub.style.display = "block";
                 btn.innerHTML = "Disable Subtitles"
             }
             }
+
+            // Background switcher
+            const images = [
+            null, // No background - Solid color
+            'Images/Neuro-sama\ Room.jpg',
+            'Images/Neuro-sama\ Room\ Dark.jpg',
+            ];
+
+            let currentIndex = 0;
+            const btn = document.getElementById('bgiTgBtn');
+
+            btn.addEventListener('click', function() {
+                // Increment index and loop back to 0 if at the end
+                currentIndex = (currentIndex + 1) % images.length;
+                
+                // Apply new image to the body background
+                document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+            });
         </script>
     </body>
 </html>
