@@ -103,3 +103,8 @@ Version 1.2.6 (15/04/2026 12:14):
 Added ablilty to switch background
 Added Neuro-sama Room.jpg and Neuro-sama Room Dark.jpg
 Default background is the solid pink color
+
+Version 1.2.6_1 (15/04/2026 20:17):
+Added the Oh... sound effect (from Neuro's 14/04 stream after losing minesweeper)
+Normalized all sound effects to -6dB
+Removed Do you get the fucking joke now?'s and EGGS's noise using UVR
