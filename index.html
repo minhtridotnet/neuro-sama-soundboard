@@ -3,18 +3,19 @@
     <head>
         <title>Neuro-sama Soundboard</title>
         <link rel="icon" href="Images/icon.png">
+        <!-- Preloads the subtitle font -->
+        <link rel="preload" href="Fonts/First Coffee.ttf" as="font" type="font/ttf" crossorigin="anonymous">
         <style>
             /* First Coffee font: Used for subtitles, like in the actual stream */
             @font-face {
                 font-family: 'First Coffee';
-                src: url('Fonts/First Coffee.ttf'), url('https://www.fontmirror.com/app_public/files/t/22/2024/10/First%20Coffee.ttf');
-                font-weight: 100;
+                src: url('Fonts/First Coffee.ttf');
+                font-display: swap;
             }
             /* Sobiscuit font: Used for the title of the website. It is the font used for the official Neuro-sama logo */
             @font-face {
                 font-family: 'Sobiscuit';
                 src: url('Fonts/Sobiscuit.ttf');
-                font-weight: 100;
             }
             body {
                 background-color: #FFAFAC;

@@ -96,3 +96,5 @@ Subtitles are now disabled by default
 Version 1.2.5 (15/04/2026 11:42):
 Fixed the bug where the toggle button has to press 2 times to enable
 Added preloading for sound effects to ensure lowest latency
+Removed font-weight for First Coffee and Sobiscuit because it is useless
+Added preloading for First Coffee (subtitles) font and font-display: swap; (according to AI, it is to prevent invisible text during load)
