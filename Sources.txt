@@ -1,0 +1,17 @@
+Sources for each sound effects:
+
+Filtered: https://www.tiktok.com/@neurosoda/video/7405033729212566827 (0:50)
+F-word: https://www.tiktok.com/@neurosoda/video/7405033729212566827 (0:07)
+Someone tell Vedal there is a problem with my AI: http://youtu.be/Gmr4WfHemTA
+No: https://www.myinstants.com/en/instant/neuro-no-88868
+Shut up (sped up): https://www.myinstants.com/en/instant/neuro-shut-up-9671
+Spoiler Alert: https://www.myinstants.com/en/instant/neuro-spoiler-85855
+Uhhh*: https://youtu.be/jXz4fxsc4Rs&t=17s
+STOP*: http://youtu.be/KZ5q9A-I0LI&t=27s
+Do you get the fucking joke now?*: http://youtu.be/RHE3dKumWk0&t=32s
+GUYS DOOR IS FRICKING STUCK: https://youtu.be/Kk0xJ7Zhj4U&t=60s
+EGGS*: https://youtu.be/3XD37HsAY3g&t=4s
+Oh...: http://youtu.be/ffW2rAQuj2A&t=171s
+What?*: https://youtu.be/20cJRM8fKzg&t=305s
+
+* Background noise removed by Ultimate Vocal Remover (melband-roformer-deux model).

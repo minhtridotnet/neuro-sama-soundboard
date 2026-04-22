@@ -13,7 +13,9 @@ Uhhh;
 STOP;
 Do you get the f****** joke now?;
 GUYS DOOR IS FRICKING STUCK;
-EGGS
+EGGS;
+Oh...;
+What?
 
 All of these sounds (except for the last 3) have its background noises removed using Ultimate Vocal Remover (UVR) app ran locally in my PC, specifically using the mel-band-roformer-deux model made by becruily. Also, all sound effects volumes are normalized to a maximum of -6dB.
 

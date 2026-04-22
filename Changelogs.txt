@@ -1,6 +1,8 @@
 Neuro-sama Soundboard
 Made by minhtridotnet
 
+Version naming (since 0.2.1): +0.1 for a new feature, +0.0.1 for bug fix/small changes, +0.0.0_1 for new sound effects/sound effect changes
+
 Changelogs:
 
 Version 0.1.0 (11/02/2026 1:05):
@@ -108,3 +110,6 @@ Version 1.2.6_1 (15/04/2026 20:17):
 Added the Oh... sound effect (from Neuro's 14/04 stream after losing minesweeper)
 Normalized all sound effects to -6dB
 Removed Do you get the fucking joke now?'s and EGGS's noise using UVR
+
+Version 1.2.6_2 (22/04/2026 23:10):
+Added the What? sound effect (from Neuro's 21/4 stream, specifically while in 3rd dimensional mode)
