@@ -1,0 +1,108 @@
+/* First Coffee font: Used for subtitles, like in the actual stream */
+@font-face {
+    font-family: 'First Coffee';
+    src: url('Fonts/First Coffee.ttf');
+    font-display: swap;
+}
+/* Sobiscuit font: Used for the title of the website. It is the font used for the official Neuro-sama logo */
+@font-face {
+    font-family: 'Sobiscuit';
+    src: url('Fonts/Sobiscuit.ttf');
+}
+body {
+    background-color: #FFAFAC;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1 {
+    -webkit-text-stroke: 0.5px black;
+    color: #bbfdff;
+    text-shadow:
+        2px 2px 0 #000000;
+    font-family: 'Sobiscuit', Helvetica, sans-serif;
+}
+p {
+    color: white;
+    text-shadow: 1px 1px #000000;
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* Styles for the sound effects buttons */
+.sfxBtn {
+    background-color: #FFFFFF;
+    border: none;
+    color: black;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px #bebebe;
+    font-family: Helvetica, Arial, sans-serif;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px
+}
+/* Styles for other buttons */
+.otrBtn {
+    background-color: #FFFFFF;
+    border: none;
+    color: black;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px #bebebe;
+    font-family: Helvetica, Arial, sans-serif;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px
+}
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+/* Styles for the reset subtitles button id */
+#rstBtn {
+    position: fixed;
+    bottom: 4px;
+    left: 4px;
+    z-index: 2;
+}
+/* Styles for the subtitles toggle button id */
+#subTgBtn {
+    position: fixed;
+    bottom: 4px;
+    left: 120px;
+    z-index: 2;
+}
+/* Styles for the background image toggle button id */
+#bgiTgBtn {
+    position: fixed;
+    bottom: 4px;
+    right: 4px;
+    z-index: 2;
+}
+/* Styles for the subtitles id */
+#subtitles {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* text */
+    color: white;
+    text-align: center;
+    padding: 32px 0px;
+    margin: 0px auto;
+    z-index: 1;
+    display: none;
+    font-family: 'First Coffee', Helvetica, sans-serif;
+    font-size: clamp(1rem, 2.5vw, 3rem);
+    -webkit-text-stroke: 1px #451928;
+    text-shadow: 1.5px 1.5px #45192880;
+}

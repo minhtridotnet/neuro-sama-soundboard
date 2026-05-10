@@ -113,3 +113,7 @@ Removed Do you get the fucking joke now?'s and EGGS's noise using UVR
 
 Version 1.2.6_2 (22/04/2026 23:10):
 Added the What? sound effect (from Neuro's 21/4 stream, specifically while in 3rd dimensional mode)
+
+Version 1.2.7 (10/05/2026 21:59):
+Added some basic styles to the README.md file. Separated styles part (CSS) from the main html to a separate style.css file.
+Planned future update: Mobile-friendly styles.
