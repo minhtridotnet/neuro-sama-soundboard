@@ -9,6 +9,10 @@
     font-family: 'Sobiscuit';
     src: url('Fonts/Sobiscuit.ttf');
 }
+/* Prevent touchscreen devices from accidentally zooming the page */
+html {
+  touch-action: manipulation;
+}
 body {
     background-color: #FFAFAC;
     background-image: none;
@@ -20,8 +24,7 @@ body {
 h1 {
     -webkit-text-stroke: 0.5px black;
     color: #bbfdff;
-    text-shadow:
-        2px 2px 0 #000000;
+    text-shadow: 2px 2px 0 #000000;
     font-family: 'Sobiscuit', Helvetica, sans-serif;
 }
 p {
@@ -29,8 +32,8 @@ p {
     text-shadow: 1px 1px #000000;
     font-family: Helvetica, Arial, sans-serif;
 }
-/* Styles for the sound effects buttons */
-.sfxBtn {
+/* Styles for the all general buttons (mostly sound effects) */
+.btn {
     background-color: #FFFFFF;
     border: none;
     color: black;
@@ -43,23 +46,12 @@ p {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    box-shadow: 2px 2px
+    box-shadow: 2px 2px;
 }
-/* Styles for other buttons */
-.otrBtn {
-    background-color: #FFFFFF;
-    border: none;
-    color: black;
-    padding: 6px 6px;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 1px 1px #bebebe;
-    font-family: Helvetica, Arial, sans-serif;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    box-shadow: 2px 2px
+/* Styles for other buttons (smaller than btn) */
+.other {
+    padding: 6px 6px !important;
+    font-size: 14px !important;
 }
 .right {
     float: right;
@@ -105,4 +97,48 @@ p {
     font-size: clamp(1rem, 2.5vw, 3rem);
     -webkit-text-stroke: 1px #451928;
     text-shadow: 1.5px 1.5px #45192880;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .btn {
+        text-shadow: 1.5px 1.5px #bebebe;
+        font-size: 18px;
+        margin: 5px 2.5px;
+        box-shadow: 2.5px 2.5px;
+    }
+
+}
+/* For big phones (eg. iPhone 14 Pro Max, Samsung Galaxy S25 Ultra) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.25rem;
+        text-shadow: 1.5px 1.5px 0 #000000;
+    }
+}
+/* For small phones (eg. iPhone 12 Pro, iPhone SE). Works as low as iPhone 5 resolution - 320px */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1rem;
+        text-shadow: 1px 1px 0 #000000;
+    }
+    p {
+        font-size: 0.75rem;
+    }
+    .btn {
+        padding: 14px 14px;
+        text-shadow: 1.5px 1.5px #bebebe;
+        font-size: 16px;
+        margin: 4px 2px;
+        box-shadow: 2px 2px;
+    }
+    .other {
+        padding: 4px 4px !important;
+        font-size: 11px !important;
+    }
+    #subTgBtn {
+        left: 94px;
+    }
 }

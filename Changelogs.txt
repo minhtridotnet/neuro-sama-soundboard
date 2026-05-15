@@ -117,3 +117,10 @@ Added the What? sound effect (from Neuro's 21/4 stream, specifically while in 3r
 Version 1.2.7 (10/05/2026 21:59):
 Added some basic styles to the README.md file. Separated styles part (CSS) from the main html to a separate style.css file.
 Planned future update: Mobile-friendly styles.
+
+Version 1.3.0 (16/05/2026 0:05):
+Added Yay! sound effect (from 6/5 stream)
+Increased Spoiler Alert sound effect volume by 1.5dB
+Added support for mobile devices (page can look fine for as low as 320px)
+I consider this as a new feature, so 1.2.7 will become the new 1.3.0
+Planned: play sound for vintage browsers

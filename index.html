@@ -6,16 +6,17 @@
         <!-- Preloads the subtitle font -->
         <link rel="preload" href="Fonts/First Coffee.ttf" as="font" type="font/ttf" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div>
             <h1 class="left">Neuro-sama Soundboard</h1> <!-- Title -->
             <a class="right" href="Changelogs.txt" target="_blank">
-                <button class="otrBtn" type="button">Changelogs</button> <!-- Opens Changelogs.txt in new tab -->
+                <button class="other btn" type="button">Changelogs</button> <!-- Opens Changelogs.txt in new tab -->
             </a>
             <div style="clear:both;"></div>
         </div>
-        <p>Version 1.2.7</p> <!-- Version number -->
+        <p>Version 1.3.0</p> <!-- Version number -->
 
         <div id="audio-preloader"> <!-- Preloads audio to ensure low latency -->
             <audio preload="auto"><source src="Sounds/Neuro-sama Filtered.mp3" type="audio/mpeg"></audio>
@@ -31,36 +32,38 @@
             <audio preload="auto"><source src="Sounds/Neuro-sama EGGS.mp3" type="audio/mpeg"></audio>
             <audio preload="auto"><source src="Sounds/Neuro-sama Oh....mp3" type="audio/mpeg"></audio>
             <audio preload="auto"><source src="Sounds/Neuro-sama What.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama Yay.mp3" type="audio/mpeg"></audio>
         </div>
 
         <div> <!-- All sound effect buttons here, with its sound path and custom text (optional) -->
-            <button class="sfxBtn" sound="Sounds/Neuro-sama Filtered.mp3" type="button">Filtered</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama F-word.mp3" custom-text="FUCK">F-word</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3">Someone tell Vedal there is a problem with my AI</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama No.mp3">No</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama Shut up.mp3" custom-text="Shut up">Shut up (sped up)</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama Spoiler alert.mp3">Spoiler alert</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama Uhhh.mp3">Uhhh</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama STOP.mp3">STOP</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama Do you get the fucking joke now.mp3">Do you get the fucking joke now?</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama GUYS DOOR IS FRICKING STUCK.mp3">GUYS DOOR IS FRICKING STUCK</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama EGGS.mp3">EGGS</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama Oh....mp3">Oh...</button>
-            <button class="sfxBtn" sound="Sounds/Neuro-sama What.mp3">What?</button>
+            <button class="btn" sound="Sounds/Neuro-sama Filtered.mp3" type="button">Filtered</button>
+            <button class="btn" sound="Sounds/Neuro-sama F-word.mp3" custom-text="FUCK">F-word</button>
+            <button class="btn" sound="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3">Someone tell Vedal there is a problem with my AI</button>
+            <button class="btn" sound="Sounds/Neuro-sama No.mp3">No</button>
+            <button class="btn" sound="Sounds/Neuro-sama Shut up.mp3" custom-text="Shut up">Shut up (sped up)</button>
+            <button class="btn" sound="Sounds/Neuro-sama Spoiler alert.mp3">Spoiler alert</button>
+            <button class="btn" sound="Sounds/Neuro-sama Uhhh.mp3">Uhhh</button>
+            <button class="btn" sound="Sounds/Neuro-sama STOP.mp3">STOP</button>
+            <button class="btn" sound="Sounds/Neuro-sama Do you get the fucking joke now.mp3">Do you get the fucking joke now?</button>
+            <button class="btn" sound="Sounds/Neuro-sama GUYS DOOR IS FRICKING STUCK.mp3">GUYS DOOR IS FRICKING STUCK</button>
+            <button class="btn" sound="Sounds/Neuro-sama EGGS.mp3">EGGS</button>
+            <button class="btn" sound="Sounds/Neuro-sama Oh....mp3">Oh...</button>
+            <button class="btn" sound="Sounds/Neuro-sama What.mp3">What?</button>
+            <button class="btn" sound="Sounds/Neuro-sama Yay.mp3">Yay!</button>
 
         </div>
 
         <div>
-            <button class="otrBtn" id="rstBtn">Reset Subtitles</button>
-            <button class="otrBtn" id="subTgBtn" onclick="toggleSubtitles()">Enable Subtitles</button>
-            <button class="otrBtn" id="bgiTgBtn">Switch Background</button>
+            <button class="other btn" id="rstBtn">Reset Subtitles</button>
+            <button class="other btn" id="subTgBtn" onclick="toggleSubtitles()">Enable Subtitles</button>
+            <button class="other btn" id="bgiTgBtn">Switch Background</button>
         </div>
 
         <div id="subtitles"></div> <!-- This is where subtitles is located in -->
         
         <script> // Scripts that play the sound effect, run the subtitles, and reset the subtitles
             const subtitleDisplay = document.getElementById('subtitles');
-            const buttons = document.querySelectorAll('.sfxBtn');
+            const buttons = document.querySelectorAll('.btn');
             let resetTimer;
 
             buttons.forEach(button => {
