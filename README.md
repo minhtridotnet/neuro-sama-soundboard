@@ -20,6 +20,7 @@ All current sound effects as of 10/05/2026:
 11. EGGS
 12. Oh...
 13. What?
+14. Yay!
 
 All of these sounds have its background noises removed using Ultimate Vocal Remover (UVR) app ran locally in my PC, specifically using the mel-band-roformer-deux model made by becruily. Also, all sound effects volumes are normalized to a maximum of -6dB.
 

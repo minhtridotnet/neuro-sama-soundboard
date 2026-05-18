@@ -131,3 +131,7 @@ Fixed bug in the subtitles where enable/disable subtitles and switch background 
 Small tweaks on the UI (mostly mobile)
 Experimental: Added browser detection for legacy broswers (not tested yet)
 23:42: The original script to detect old browsers doesn't work, so I'm trying another one
+
+Version 1.3.2 (19/05/2026 0:29):
+Switched back the playsound system from current to the pre 1.2.0 one for better compatibility with older browsers
+Removed browser detection (because it doesn't work)
