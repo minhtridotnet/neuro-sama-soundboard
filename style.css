@@ -9,9 +9,9 @@
     font-family: 'Sobiscuit';
     src: url('Fonts/Sobiscuit.ttf');
 }
-/* Prevent touchscreen devices from accidentally zooming the page */
+/* Prevent touchscreen devices from accidentally zooming the page (doesn't seem to work for some devices) */
 html {
-  touch-action: manipulation;
+    touch-action: manipulation;
 }
 body {
     background-color: #FFAFAC;
@@ -25,6 +25,7 @@ h1 {
     -webkit-text-stroke: 0.5px black;
     color: #bbfdff;
     text-shadow: 2px 2px 0 #000000;
+    margin: 0.67em 0 0.5em;
     font-family: 'Sobiscuit', Helvetica, sans-serif;
 }
 p {
@@ -40,13 +41,19 @@ p {
     padding: 16px 16px;
     text-align: center;
     text-decoration: none;
-    text-shadow: 1px 1px #bebebe;
+    text-shadow: 1px 1px #BEBEBE;
     font-family: Helvetica, Arial, sans-serif;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
     box-shadow: 2px 2px;
+}
+.btn:active {
+    background-color: #D6D6D6;
+    text-shadow: 1px 1px #969696;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px;
 }
 /* Styles for other buttons (smaller than btn) */
 .other {
@@ -104,10 +111,13 @@ p {
         font-size: 1.5rem;
     }
     .btn {
-        text-shadow: 1.5px 1.5px #bebebe;
+        text-shadow: 1.25px 1.25px #BEBEBE;
         font-size: 18px;
         margin: 5px 2.5px;
-        box-shadow: 2.5px 2.5px;
+    }
+    #subtitles {
+    -webkit-text-stroke: 0.6px #451928;
+    text-shadow: 0.75px 0.75px #45192880;
     }
 
 }
@@ -116,23 +126,31 @@ p {
     h1 {
         font-size: 1.25rem;
         text-shadow: 1.5px 1.5px 0 #000000;
+        margin: 0.6em 0 0;
+    }
+    p {
+        font-size: 0.85rem;
+    }
+    #subtitles {
+    -webkit-text-stroke: 0.6px #451928;
+    text-shadow: 0.75px 0.75px #45192880;
     }
 }
 /* For small phones (eg. iPhone 12 Pro, iPhone SE). Works as low as iPhone 5 resolution - 320px */
 @media (max-width: 400px) {
     h1 {
-        font-size: 1rem;
+        font-size: 0.95rem;
         text-shadow: 1px 1px 0 #000000;
+        margin: 0.56em 0 0;
     }
     p {
         font-size: 0.75rem;
     }
     .btn {
         padding: 14px 14px;
-        text-shadow: 1.5px 1.5px #bebebe;
+        text-shadow: 1px 1px #BEBEBE;
         font-size: 16px;
         margin: 4px 2px;
-        box-shadow: 2px 2px;
     }
     .other {
         padding: 4px 4px !important;
@@ -140,5 +158,9 @@ p {
     }
     #subTgBtn {
         left: 94px;
+    }
+    #subtitles {
+    -webkit-text-stroke: 0.6px #451928;
+    text-shadow: 0.75px 0.75px #45192880;
     }
 }

@@ -2,6 +2,7 @@ Neuro-sama Soundboard
 Made by minhtridotnet
 
 Version naming (since 0.2.1): +0.1 for a new feature, +0.0.1 for bug fix/small changes, +0.0.0_1 for new sound effects/sound effect changes
+Timezone: UTC+7 (Vietnam time)
 
 Changelogs:
 
@@ -124,3 +125,8 @@ Increased Spoiler Alert sound effect volume by 1.5dB
 Added support for mobile devices (page can look fine for as low as 320px)
 I consider this as a new feature, so 1.2.7 will become the new 1.3.0
 Planned: play sound for vintage browsers
+
+Version 1.3.1 (18/05/2026 17:16):
+Fixed bug in the subtitles where enable/disable subtitles and switch background are shown in the subtitles when pressed
+Small tweaks on the UI (mostly mobile)
+Experimental: Added browser detection for legacy broswers (not tested yet)

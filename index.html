@@ -16,9 +16,9 @@
             </a>
             <div style="clear:both;"></div>
         </div>
-        <p>Version 1.3.0</p> <!-- Version number -->
+        <p>Version 1.3.1</p> <!-- Version number -->
 
-        <div id="audio-preloader"> <!-- Preloads audio to ensure low latency -->
+        <div id="audio-preloader"> <!-- Preloads audio to ensure low latency (only works for some devices) -->
             <audio preload="auto"><source src="Sounds/Neuro-sama Filtered.mp3" type="audio/mpeg"></audio>
             <audio preload="auto"><source src="Sounds/Neuro-sama F-word.mp3" type="audio/mpeg"></audio>
             <audio preload="auto"><source src="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3" type="audio/mpeg"></audio>
@@ -36,20 +36,20 @@
         </div>
 
         <div> <!-- All sound effect buttons here, with its sound path and custom text (optional) -->
-            <button class="btn" sound="Sounds/Neuro-sama Filtered.mp3" type="button">Filtered</button>
-            <button class="btn" sound="Sounds/Neuro-sama F-word.mp3" custom-text="FUCK">F-word</button>
-            <button class="btn" sound="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3">Someone tell Vedal there is a problem with my AI</button>
-            <button class="btn" sound="Sounds/Neuro-sama No.mp3">No</button>
-            <button class="btn" sound="Sounds/Neuro-sama Shut up.mp3" custom-text="Shut up">Shut up (sped up)</button>
-            <button class="btn" sound="Sounds/Neuro-sama Spoiler alert.mp3">Spoiler alert</button>
-            <button class="btn" sound="Sounds/Neuro-sama Uhhh.mp3">Uhhh</button>
-            <button class="btn" sound="Sounds/Neuro-sama STOP.mp3">STOP</button>
-            <button class="btn" sound="Sounds/Neuro-sama Do you get the fucking joke now.mp3">Do you get the fucking joke now?</button>
-            <button class="btn" sound="Sounds/Neuro-sama GUYS DOOR IS FRICKING STUCK.mp3">GUYS DOOR IS FRICKING STUCK</button>
-            <button class="btn" sound="Sounds/Neuro-sama EGGS.mp3">EGGS</button>
-            <button class="btn" sound="Sounds/Neuro-sama Oh....mp3">Oh...</button>
-            <button class="btn" sound="Sounds/Neuro-sama What.mp3">What?</button>
-            <button class="btn" sound="Sounds/Neuro-sama Yay.mp3">Yay!</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Filtered.mp3" type="button">Filtered</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama F-word.mp3" custom-text="FUCK">F-word</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3">Someone tell Vedal there is a problem with my AI</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama No.mp3">No</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Shut up.mp3" custom-text="Shut up">Shut up (sped up)</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Spoiler alert.mp3">Spoiler alert</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Uhhh.mp3">Uhhh</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama STOP.mp3">STOP</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Do you get the fucking joke now.mp3">Do you get the fucking joke now?</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama GUYS DOOR IS FRICKING STUCK.mp3">GUYS DOOR IS FRICKING STUCK</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama EGGS.mp3">EGGS</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Oh....mp3">Oh...</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama What.mp3">What?</button>
+            <button class="btn" id="sfx" sound="Sounds/Neuro-sama Yay.mp3">Yay!</button>
 
         </div>
 
@@ -63,70 +63,102 @@
         
         <script> // Scripts that play the sound effect, run the subtitles, and reset the subtitles
             const subtitleDisplay = document.getElementById('subtitles');
-            const buttons = document.querySelectorAll('.btn');
+            const buttons = document.querySelectorAll('#sfx');
+            var sub = document.getElementById("subtitles");
+            var subBtn = document.getElementById("subTgBtn")
+            var rstBtn = document.getElementById("rstBtn")
+            var bgBtn = document.getElementById('bgiTgBtn');
             let resetTimer;
+
+            // Check if broswer is old (pre-ES6)
+            function isBrowserOld() {
+                try {
+                    new Function("() => {}");
+                    return !window.fetch || !window.Promise;
+                }
+                catch (e) {
+                    return true;
+                }
+            }
 
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Check if there is a "custom-text" attribute in the button. If no then use the innerText one
-                    let text = button.getAttribute('custom-text') || button.innerText;
-
-                    // Add period if no punctuation from the text
-                    if (!/[.!?]$/.test(text)) {
-                        text += '.';
+                    if (isBrowserOld()) {
+                        // Experimental: Play sound for old browsers (not tested)
+                        var soundPath = button.getAttribute('sound');
+                        var sound = document.createElement('bgsound');
+                        sound.src = soundPath;
+                        sound.autostart = 'true';
+                        sound.loop = 'false';
+                        document.body.appendChild(sound);
                     }
+                    else {
+                        // Play sound using the "sound" attribute in the button
+                        const soundPath = button.getAttribute('sound');
+                        new Audio(soundPath).play();
 
-                    // Play sound using the "sound" attribute in the button
-                    const soundPath = button.getAttribute('sound');
-                    new Audio(soundPath).play();
-                    
-                    // Append the text to existing ones
-                    subtitleDisplay.innerText += (subtitleDisplay.innerText ? ' ' : '') + text;
+                        // Check if there is a "custom-text" attribute in the button. If no then use the innerText one
+                        let text = button.getAttribute('custom-text') || button.innerText;
 
-                    // Reset 7 seconds timer on inactivity
-                    clearTimeout(resetTimer);
-                    resetTimer = setTimeout(() => {
-                        subtitleDisplay.innerText = '';
-                    }, 7000);
+                        // Add period if no punctuation from the text
+                        if (!/[.!?]$/.test(text)) {
+                            text += '.';
+                        }
+
+                        // Append the text to existing ones
+                        subtitleDisplay.innerText += (subtitleDisplay.innerText ? ' ' : '') + text;
+
+                        // Reset 7 seconds timer on inactivity
+                        clearTimeout(resetTimer);
+                        resetTimer = setTimeout(() => {
+                            subtitleDisplay.innerText = '';
+                        }, 7000);
+                    }
                 });
             });
 
-            // Button to reset subtitles if needed
-            rstBtn.addEventListener('click', () => {
-                subtitleDisplay.innerText = '';
-                clearTimeout(inactivityTimer);
-            });
-
-            // Button to toggle subtitles
-            function toggleSubtitles() {
-            var sub = document.getElementById("subtitles");
-            var btn = document.getElementById("subTgBtn")
-            if (sub.style.display === "block") {
-                sub.style.display = "none";
-                btn.innerHTML = "Enable Subtitles"
-            } else {
-                sub.style.display = "block";
-                btn.innerHTML = "Disable Subtitles"
+            if (isBrowserOld()) {
+                // Hide nonworking buttons for old browsers
+                sub.style.display = "none"
+                subBtn.style.display = "none";
+                bgBtn.style.display = "none";
+                rstBtn.style.display = "none";
             }
+            else {
+                // Button to reset subtitles if needed
+                rstBtn.addEventListener('click', () => {
+                    subtitleDisplay.innerText = '';
+                    clearTimeout(inactivityTimer);
+                });
+
+                // Button to toggle subtitles
+                function toggleSubtitles() {
+                if (sub.style.display === "block") {
+                    sub.style.display = "none";
+                    subBtn.innerHTML = "Enable Subtitles"
+                } else {
+                    sub.style.display = "block";
+                    subBtn.innerHTML = "Disable Subtitles"
+                }
+                }
+
+                // Background switcher
+                const images = [
+                null, // No background - Solid color
+                'Images/Neuro-sama\ Room.jpg',
+                'Images/Neuro-sama\ Room\ Dark.jpg',
+                ];
+
+                let currentIndex = 0;
+
+                bgBtn.addEventListener('click', function() {
+                    // Increment index and loop back to 0 if at the end
+                    currentIndex = (currentIndex + 1) % images.length;
+                    
+                    // Apply new image to the body background
+                    document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+                });
             }
-
-            // Background switcher
-            const images = [
-            null, // No background - Solid color
-            'Images/Neuro-sama\ Room.jpg',
-            'Images/Neuro-sama\ Room\ Dark.jpg',
-            ];
-
-            let currentIndex = 0;
-            const btn = document.getElementById('bgiTgBtn');
-
-            btn.addEventListener('click', function() {
-                // Increment index and loop back to 0 if at the end
-                currentIndex = (currentIndex + 1) % images.length;
-                
-                // Apply new image to the body background
-                document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
-            });
         </script>
     </body>
 </html>
