@@ -72,11 +72,14 @@
 
             // Check if broswer is old (pre-ES6)
             function isBrowserOld() {
-                try {
-                    new Function("() => {}");
-                    return !window.fetch || !window.Promise;
-                }
-                catch (e) {
+                // try {
+                //     new Function("() => {}");
+                //     return !window.fetch || !window.Promise;
+                // }
+                // catch (e) {
+                //     return true;
+                // }
+                if (!window.getComputedStyle) {
                     return true;
                 }
             }

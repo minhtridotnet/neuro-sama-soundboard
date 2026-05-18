@@ -130,3 +130,4 @@ Version 1.3.1 (18/05/2026 17:16):
 Fixed bug in the subtitles where enable/disable subtitles and switch background are shown in the subtitles when pressed
 Small tweaks on the UI (mostly mobile)
 Experimental: Added browser detection for legacy broswers (not tested yet)
+23:42: The original script to detect old browsers doesn't work, so I'm trying another one
