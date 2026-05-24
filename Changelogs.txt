@@ -147,3 +147,7 @@ Made Subtitles's stroke more bolder
 Added viewing Sources.txt, link to the github repo, and the ability to view Changelogs and Sources without exiting the Soundboard (with a button to open in new tab) inside Settings window
 Rewritten subtitles and background switcher scripts from using buttons element to function() for better compatability with some older browsers (eg. Chrome 49)
 Planned: Advanced styling (change style to new or old, change background color, change background image)
+
+Version 1.3.3_1 (24/05/2026 23:11):
+Added VAHAHAHAHAHHAHA! sound effect (from Neuro's 18/5 stream when Neuro call Vedal "Peasant" because of 128GB of RAM)
+Added a test button to test old browsers
