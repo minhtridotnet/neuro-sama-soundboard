@@ -135,3 +135,15 @@ Experimental: Added browser detection for legacy broswers (not tested yet)
 Version 1.3.2 (19/05/2026 0:29):
 Switched back the playsound system from current to the pre 1.2.0 one for better compatibility with older browsers
 Removed browser detection (because it doesn't work)
+
+Version 1.3.3 (24/05/2026 22:39):
+Major upgrades to the UI
+Added Quicksand font (main paragraph font for blog.neurosama.com) as main paragraph font, replacing Helvetica font
+Added Settings window (replacing Changelogs button with Settings button)
+Added <meta charset="utf-8"> for unicode characters in the Settings window
+Tweaked Soundboard's colors to match Neuro-sama's color scheme
+Moved Switch Background button to inside the Settings window
+Made Subtitles's stroke more bolder
+Added viewing Sources.txt, link to the github repo, and the ability to view Changelogs and Sources without exiting the Soundboard (with a button to open in new tab) inside Settings window
+Rewritten subtitles and background switcher scripts from using buttons element to function() for better compatability with some older browsers (eg. Chrome 49)
+Planned: Advanced styling (change style to new or old, change background color, change background image)

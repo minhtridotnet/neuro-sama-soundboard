@@ -9,12 +9,17 @@
     font-family: 'Sobiscuit';
     src: url('Fonts/Sobiscuit.ttf');
 }
+/* Quicksand font: Used in blog.neurosama.com as the paragraph font */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('Fonts/Quicksand.ttf');
+}
 /* Prevent touchscreen devices from accidentally zooming the page (doesn't seem to work for some devices) */
 html {
     touch-action: manipulation;
 }
 body {
-    background-color: #FFAFAC;
+    background-color: rgb(254, 169, 175);
     background-image: none;
     background-size: cover;
     background-position: center;
@@ -22,43 +27,97 @@ body {
     background-attachment: fixed;
 }
 h1 {
-    -webkit-text-stroke: 0.5px black;
-    color: #bbfdff;
-    text-shadow: 2px 2px 0 #000000;
-    margin: 0.67em 0 0.5em;
+    -webkit-text-stroke: 0.5px rgb(108, 52, 56);
+    color: rgb(178, 255, 250);
+    text-shadow: 2px 2px 0 rgb(108, 52, 56);
+    margin: 0.67em 0 1.5em;
     font-family: 'Sobiscuit', Helvetica, sans-serif;
 }
+h2 {
+    -webkit-text-stroke: 0.5px rgb(108, 52, 56);
+    color: rgb(178, 255, 250);
+    text-shadow: 2px 2px 0 rgb(108, 52, 56);
+    margin: 0.25em 0 0.5em;
+    font-family: 'Sobiscuit', 'First Coffee', Helvetica, sans-serif;
+}
 p {
-    color: white;
-    text-shadow: 1px 1px #000000;
-    font-family: Helvetica, Arial, sans-serif;
+    color: rgb(108, 52, 56);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+    margin: 0.5em 0 0.5em;
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+iframe {
+    border: none;
 }
 /* Styles for the all general buttons (mostly sound effects) */
 .btn {
-    background-color: #FFFFFF;
+    background-color: rgb(255, 234, 234);
     border: none;
-    color: black;
+    color: rgb(108, 52, 56);
     padding: 16px 16px;
     text-align: center;
     text-decoration: none;
-    text-shadow: 1px 1px #BEBEBE;
-    font-family: Helvetica, Arial, sans-serif;
+    text-shadow: 1px 1px rgba(108, 52, 56, 0.25);
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+    font-weight: 600;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    box-shadow: 2px 2px;
+    box-shadow: 2px 2px rgb(108, 52, 56);
+    -webkit-box-shadow: 2px 2px rgb(108, 52, 56);
 }
 .btn:active {
-    background-color: #D6D6D6;
-    text-shadow: 1px 1px #969696;
+    background-color: rgb(214, 196, 196);
     transform: translate(1px, 1px);
-    box-shadow: 1px 1px;
+    box-shadow: 1px 1px rgb(108, 52, 56);
+    -webkit-box-shadow: 1px 1px rgb(108, 52, 56);
 }
 /* Styles for other buttons (smaller than btn) */
 .other {
     padding: 6px 6px !important;
     font-size: 14px !important;
+}
+.settingsOverlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    z-index: 3;
+}
+.settingsContent {
+    display: block;
+    background-color: rgb(255, 216, 178);
+    margin: 10% auto;
+    padding: 20px;
+    width: 360px;
+    box-shadow: 2px 2px rgb(108, 52, 56);
+    -webkit-box-shadow: 2px 2px rgb(108, 52, 56);
+    text-align: left;
+    z-index: 4;
+}
+.version {
+    font-style: italic;
+    color: rgba(108, 52, 56, 0.5);
+    font-size: 12px;
+    margin: 0.5em 0 0.25em;
+    text-shadow: 0.85px 0.85px rgba(108, 52, 56, 0.25) !important;
+}
+.settingsClose {
+    color: rgb(255, 71, 87) !important;
+    padding: 4px 8px !important;
+    margin: 0.25em 0.5em !important;
+}
+.hidden {
+    display: none;
+}
+/* For buttons that don't work */
+.disabled {
+    background-color: rgb(214, 196, 196);
+    color: rgba(108, 52, 56, 0.5);
 }
 .right {
     float: right;
@@ -77,7 +136,7 @@ p {
 #subTgBtn {
     position: fixed;
     bottom: 4px;
-    left: 120px;
+    left: 124px;
     z-index: 2;
 }
 /* Styles for the background image toggle button id */
@@ -94,73 +153,90 @@ p {
     left: 0;
     width: 100%;
     /* text */
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 32px 0px;
     margin: 0px auto;
     z-index: 1;
     display: none;
     font-family: 'First Coffee', Helvetica, sans-serif;
-    font-size: clamp(1rem, 2.5vw, 3rem);
-    -webkit-text-stroke: 1px #451928;
-    text-shadow: 1.5px 1.5px #45192880;
+    font-size: 2em;
+    -webkit-text-stroke: 1.5px rgb(108, 52, 56);
+    text-shadow: 1.5px 1.5px rgba(108, 52, 56, 0.5);
 }
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.5rem;
-    }
-    .btn {
-        text-shadow: 1.25px 1.25px #BEBEBE;
-        font-size: 18px;
-        margin: 5px 2.5px;
+        font-size: 1.5em;
     }
     #subtitles {
-    -webkit-text-stroke: 0.6px #451928;
-    text-shadow: 0.75px 0.75px #45192880;
+    font-size: 1.5em;
+    -webkit-text-stroke: 1.25px rgb(108, 52, 56);
+    text-shadow: 1.25px 1.25px rgba(108, 52, 56, 0.5);
     }
 
 }
 /* For big phones (eg. iPhone 14 Pro Max, Samsung Galaxy S25 Ultra) */
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.25rem;
-        text-shadow: 1.5px 1.5px 0 #000000;
-        margin: 0.6em 0 0;
+        font-size: 1.25em;
+        text-shadow: 1.5px 1.5px 0 rgb(108, 52, 56);
+        margin: 0.6em 0 1em;
+    }
+    h2 {
+        font-size: 1.5em;
     }
     p {
         font-size: 0.85rem;
     }
+    .settingsContent {
+    width: 320px;
+    }
     #subtitles {
-    -webkit-text-stroke: 0.6px #451928;
-    text-shadow: 0.75px 0.75px #45192880;
+    font-size: 1.25em;
+    -webkit-text-stroke: 1px rgb(108, 52, 56);
+    text-shadow: 1px 1px rgba(108, 52, 56, 0.5);
     }
 }
 /* For small phones (eg. iPhone 12 Pro, iPhone SE). Works as low as iPhone 5 resolution - 320px */
 @media (max-width: 400px) {
     h1 {
-        font-size: 0.95rem;
-        text-shadow: 1px 1px 0 #000000;
-        margin: 0.56em 0 0;
+        font-size: 0.95em;
+        text-shadow: 1px 1px 0 rgb(108, 52, 56);
+        margin: 0.56em 0 0.8em;
+    }
+    h2 {
+        font-size: 1.1em;
+        text-shadow: 1px 1px 0 rgb(108, 52, 56);
     }
     p {
-        font-size: 0.75rem;
+        font-size: 0.75em;
     }
     .btn {
         padding: 14px 14px;
-        text-shadow: 1px 1px #BEBEBE;
+        text-shadow: 1px 1px rgba(108, 52, 56, 0.25);
         font-size: 16px;
         margin: 4px 2px;
     }
     .other {
         padding: 4px 4px !important;
         font-size: 11px !important;
+        text-shadow: 0.85px 0.85px rgba(108, 52, 56, 0.25) !important;
+    }
+    .settingsContent {
+        padding: 16px;
+        width: 250px;
+    }
+    .settingsClose {
+        padding: 3px 6px !important;
+        font-size: 12px;
     }
     #subTgBtn {
-        left: 94px;
+        left: 96px;
     }
     #subtitles {
-    -webkit-text-stroke: 0.6px #451928;
-    text-shadow: 0.75px 0.75px #45192880;
+    font-size: 1em;
+    -webkit-text-stroke: 0.85px rgb(108, 52, 56);
+    text-shadow: 0.85px 0.85px rgba(108, 52, 56, 0.5);
     }
 }
