@@ -151,3 +151,12 @@ Planned: Advanced styling (change style to new or old, change background color, 
 Version 1.3.3_1 (24/05/2026 23:11):
 Added VAHAHAHAHAHHAHA! sound effect (from Neuro's 18/5 stream when Neuro call Vedal "Peasant" because of 128GB of RAM)
 Added a test button to test old browsers
+
+Version 1.3.4 (25/05/2026 23:43):
+Added advanced style customizer (replaced the background switcher)
+Added descriptions for some scripts
+Small UI tweaks:
+- Increased -webkit-text-stroke on h1 and h2 from 0.5px to 1px
+- Added a fallback for font-weight and font-size (subtitles only) for browsers that don't support certain features
+Bug: Custom Background Image sometimes doesn't fit the image to viewport
+Planned: Change style to new or old (pre-1.3.3 style)

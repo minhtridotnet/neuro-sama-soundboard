@@ -8,11 +8,13 @@
 @font-face {
     font-family: 'Sobiscuit';
     src: url('Fonts/Sobiscuit.ttf');
+    font-display: swap;
 }
 /* Quicksand font: Used in blog.neurosama.com as the paragraph font */
 @font-face {
     font-family: 'Quicksand';
     src: url('Fonts/Quicksand.ttf');
+    font-display: swap;
 }
 /* Prevent touchscreen devices from accidentally zooming the page (doesn't seem to work for some devices) */
 html {
@@ -27,14 +29,14 @@ body {
     background-attachment: fixed;
 }
 h1 {
-    -webkit-text-stroke: 0.5px rgb(108, 52, 56);
+    -webkit-text-stroke: 1px rgb(108, 52, 56);
     color: rgb(178, 255, 250);
     text-shadow: 2px 2px 0 rgb(108, 52, 56);
     margin: 0.67em 0 1.5em;
     font-family: 'Sobiscuit', Helvetica, sans-serif;
 }
 h2 {
-    -webkit-text-stroke: 0.5px rgb(108, 52, 56);
+    -webkit-text-stroke: 1px rgb(108, 52, 56);
     color: rgb(178, 255, 250);
     text-shadow: 2px 2px 0 rgb(108, 52, 56);
     margin: 0.25em 0 0.5em;
@@ -45,7 +47,9 @@ p {
     text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
     margin: 0.5em 0 0.5em;
     font-family: 'Quicksand', Helvetica, Arial, sans-serif;
-    font-weight: 600;
+    font-weight: 600 !important;
+    /* Fallback from 600 to normal if browser doesn't support number syntax */
+    font-weight: normal;
 }
 iframe {
     border: none;
@@ -60,24 +64,27 @@ iframe {
     text-decoration: none;
     text-shadow: 1px 1px rgba(108, 52, 56, 0.25);
     font-family: 'Quicksand', Helvetica, Arial, sans-serif;
-    font-weight: 600;
+    font-weight: 600 !important;
+    /* Fallback from 600 to normal if browser doesn't support number syntax */
+    font-weight: normal;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
     box-shadow: 2px 2px rgb(108, 52, 56);
-    -webkit-box-shadow: 2px 2px rgb(108, 52, 56);
 }
 .btn:active {
     background-color: rgb(214, 196, 196);
     transform: translate(1px, 1px);
     box-shadow: 1px 1px rgb(108, 52, 56);
-    -webkit-box-shadow: 1px 1px rgb(108, 52, 56);
 }
 /* Styles for other buttons (smaller than btn) */
 .other {
     padding: 6px 6px !important;
     font-size: 14px !important;
+}
+.image {
+    padding: 31.5px 56px;
 }
 .settingsOverlay {
     display: none; /* Hidden by default */
@@ -155,18 +162,24 @@ iframe {
     /* text */
     color: rgb(255, 255, 255);
     text-align: center;
-    padding: 32px 0px;
+    padding: 36px 0;
     margin: 0px auto;
     z-index: 1;
     display: none;
     font-family: 'First Coffee', Helvetica, sans-serif;
+    font-size: clamp(1em, 4vw, 2em) !important;
+    /* Fallback if browser doesn't support clamp */
     font-size: 2em;
     -webkit-text-stroke: 1.5px rgb(108, 52, 56);
     text-shadow: 1.5px 1.5px rgba(108, 52, 56, 0.5);
 }
+input[type="file"] {
+    display: none;
+}
 
 @media (max-width: 600px) {
     h1 {
+        -webkit-text-stroke: 0.85px rgb(108, 52, 56);
         font-size: 1.5em;
     }
     #subtitles {
@@ -180,11 +193,13 @@ iframe {
 @media (max-width: 480px) {
     h1 {
         font-size: 1.25em;
+        -webkit-text-stroke: 0.75px rgb(108, 52, 56);
         text-shadow: 1.5px 1.5px 0 rgb(108, 52, 56);
         margin: 0.6em 0 1em;
     }
     h2 {
         font-size: 1.5em;
+        -webkit-text-stroke: 0.85px rgb(108, 52, 56);
     }
     p {
         font-size: 0.85rem;
@@ -192,21 +207,26 @@ iframe {
     .settingsContent {
     width: 320px;
     }
+    .image {
+        padding: 27px 48px;
+    }
     #subtitles {
     font-size: 1.25em;
     -webkit-text-stroke: 1px rgb(108, 52, 56);
-    text-shadow: 1px 1px rgba(108, 52, 56, 0.5);
+    text-shadow: 1.25px 1.25px rgba(108, 52, 56, 0.5);
     }
 }
 /* For small phones (eg. iPhone 12 Pro, iPhone SE). Works as low as iPhone 5 resolution - 320px */
 @media (max-width: 400px) {
     h1 {
         font-size: 0.95em;
+        -webkit-text-stroke: 0.65px rgb(108, 52, 56);
         text-shadow: 1px 1px 0 rgb(108, 52, 56);
         margin: 0.56em 0 0.8em;
     }
     h2 {
         font-size: 1.1em;
+        -webkit-text-stroke: 0.75px rgb(108, 52, 56);
         text-shadow: 1px 1px 0 rgb(108, 52, 56);
     }
     p {
@@ -227,16 +247,24 @@ iframe {
         padding: 16px;
         width: 250px;
     }
+    .version {
+        font-size: 10px;
+        text-shadow: 0.65px 0.65px rgba(108, 52, 56, 0.25) !important;
+    }
     .settingsClose {
         padding: 3px 6px !important;
         font-size: 12px;
+    }
+    .image {
+        padding: 20.25px 36px;
     }
     #subTgBtn {
         left: 96px;
     }
     #subtitles {
     font-size: 1em;
+    padding: 32px 0;
     -webkit-text-stroke: 0.85px rgb(108, 52, 56);
-    text-shadow: 0.85px 0.85px rgba(108, 52, 56, 0.5);
+    text-shadow: 1px 1px rgba(108, 52, 56, 0.5);
     }
 }
