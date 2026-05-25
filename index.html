@@ -147,9 +147,7 @@
             // Play sound + subtitles
             var playSound = function(button, soundFile) {
                 // Play sound
-                new Audio(soundFile).play().catch(function(error) {
-                    console.log("Audio playback failed:", error);
-                });;
+                new Audio(soundFile).play()
 
                 // Check if there is a "custom-text" attribute in the button. If no then use the innerText one
                 let text = button.getAttribute('custom-text') || button.innerText;
