@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Neuro-sama Soundboard</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="Images/icon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @font-face {
+                font-family: 'First Coffee';
+                src: url('Fonts/First Coffee.ttf');
+            }
+            /* Sobiscuit font: Used for the title of the website. It is the font used for the official Neuro-sama logo */
+            @font-face {
+                font-family: 'Sobiscuit';
+                src: url('Fonts/Sobiscuit.ttf');
+            }
+            /* Prevent touchscreen devices from accidentally zooming the page (doesn't seem to work for some devices) */
+            html {
+                touch-action: manipulation;
+            }
+            body {
+                background-color: rgb(254, 169, 175);
+                background-image: none;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            h1 {
+                -webkit-text-stroke: 1px rgb(0, 0, 0);
+                color: rgb(187, 253, 255);
+                text-shadow: 2px 2px 0 rgb(0, 0, 0);
+                font-family: 'Sobiscuit', Helvetica, sans-serif;
+                font-weight: bold;
+            }
+            p {
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px rgb(0, 0, 0);
+                font-family: Helvetica, Arial, sans-serif;
+            }
+            hr {
+                border: none;
+                height: 2px;
+                background-color: rgb(247, 136, 150);
+            }
+            .btn {
+                background-color: rgb(255, 255, 255);
+                border: none;
+                color: rgb(0, 0, 0);
+                padding: 16px 16px;
+                text-align: center;
+                text-decoration: none;
+                text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+                font-family: Helvetica, Arial, sans-serif;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                box-shadow: 2px 2px rgb(0, 0, 0);
+            }
+            .btn:active {
+                background-color: rgb(214, 214, 214);
+                transform: translate(1px, 1px);
+                box-shadow: 1px 1px rgb(0, 0, 0);
+            }
+            /* Styles for other buttons (smaller than btn) */
+            .other {
+                padding: 6px 6px !important;
+                font-size: 14px !important;
+            }
+            .legacy {
+                font-style: italic;
+                color: rgb(255, 255, 255);
+                font-size: 12px;
+                margin: 0.5em 0 0.25em;
+                text-shadow: 0.85px 0.85px rgba(0, 0, 0) !important;
+            }
+            .container {
+                display: flex;
+                gap: 10px;
+            }
+            .right {
+                float: right;
+            }
+            .left {
+                float: left;
+            }
+            @media (max-width: 600px) {
+                h1 {
+                    -webkit-text-stroke: 0.85px rgb(0, 0, 0);
+                    font-size: 1.5em;
+                }
+            } 
+            /* For big phones (eg. iPhone 14 Pro Max, Samsung Galaxy S25 Ultra) */
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 1.25em;
+                    -webkit-text-stroke: 0.75px rgb(0, 0, 0);
+                    text-shadow: 1.5px 1.5px 0 rgb(0, 0, 0);
+                    margin: 0.6em 0 1em;
+                }
+                p {
+                    font-size: 0.85rem;
+                }
+            }
+            /* For small phones (eg. iPhone 12 Pro, iPhone SE). Works as low as iPhone 5 resolution - 320px */
+            @media (max-width: 400px) {
+                h1 {
+                    font-size: 0.95em;
+                    -webkit-text-stroke: 0.65px rgb(0, 0, 0);
+                    text-shadow: 1px 1px 0 rgb(0, 0, 0);
+                    margin: 0.56em 0 0.8em;
+                }
+                p {
+                    font-size: 0.75em;
+                }
+                .btn {
+                    padding: 14px 14px;
+                    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+                    font-size: 16px;
+                    margin: 4px 2px;
+                }
+                .other {
+                    padding: 4px 4px !important;
+                    font-size: 11px !important;
+                    text-shadow: 0.85px 0.85px rgba(0, 0, 0, 0.25) !important;
+                }
+                .legacy {
+                    font-size: 8px;
+                    text-shadow: 0.5px 0.5px rgba(0, 0, 0) !important;
+                }
+                .container {
+                    gap: 5px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Neuro-sama Soundboard</h1>
+            <p class="legacy">Legacy</p>
+        </div>
+        <p>Version 1.1.9_L1</p>
+        <div>
+            <!-- Loads audio -->
+            <audio id="Filtered" src="Sounds/Neuro-sama Filtered.mp3" type="audio/mpeg"></audio>
+            <audio id="F-word" src="Sounds/Neuro-sama F-word.mp3" type="audio/mpeg"></audio>
+            <audio id="Someone tell Vedal there is a problem with my AI" src="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3" type="audio/mpeg"></audio>
+            <audio id="No" src="Sounds/Neuro-sama No.mp3" type="audio/mpeg"></audio>
+            <audio id="Shut up" src="Sounds/Neuro-sama Shut up.mp3" type="audio/mpeg"></audio>
+            <audio id="Spoiler alert" src="Sounds/Neuro-sama Spoiler alert.mp3" type="audio/mpeg"></audio>
+            <audio id="Uhhh" src="Sounds/Neuro-sama Uhhh.mp3" type="audio/mpeg"></audio>
+            <audio id="STOP" src="Sounds/Neuro-sama STOP.mp3" type="audio/mpeg"></audio>
+            <audio id="Do you get the fucking joke now" src="Sounds/Neuro-sama Do you get the fucking joke now.mp3" type="audio/mpeg"></audio>
+            <audio id="GUYS DOOR IS FRICKING STUCK" src="Sounds/Neuro-sama GUYS DOOR IS FRICKING STUCK.mp3" type="audio/mpeg"></audio>
+            <audio id="EGGS" src="Sounds/Neuro-sama EGGS.mp3" type="audio/mpeg"></audio>
+            <audio id="Oh..." src="Sounds/Neuro-sama Oh....mp3" type="audio/mpeg"></audio>
+            <audio id="What" src="Sounds/Neuro-sama What.mp3" type="audio/mpeg"></audio>
+            <audio id="Yay" src="Sounds/Neuro-sama Yay.mp3" type="audio/mpeg"></audio>
+            <audio id="VAHAHAHAHAHHAHA" src="Sounds/Neuro-sama VAHAHAHAHAHHAHA.mp3" type="audio/mpeg"></audio>
+
+            <!-- Sound effect buttons -->
+            <button class="btn" onclick="document.getElementById('Filtered').play()">Filtered</button>
+            <button class="btn" onclick="document.getElementById('F-word').play()">F-word</button>
+            <button class="btn" onclick="document.getElementById('Someone tell Vedal there is a problem with my AI').play()">Someone tell Vedal there is a problem with my AI</button>
+            <button class="btn" onclick="document.getElementById('No').play()">No</button>
+            <button class="btn" onclick="document.getElementById('Shut up').play()">Shut up</button>
+            <button class="btn" onclick="document.getElementById('Spoiler alert').play()">Spoiler alert</button>
+            <button class="btn" onclick="document.getElementById('Uhhh').play()">Uhhh</button>
+            <button class="btn" onclick="document.getElementById('STOP').play()">STOP</button>
+            <button class="btn" onclick="document.getElementById('Do you get the fucking joke now').play()">Do you get the fucking joke now?</button>
+            <button class="btn" onclick="document.getElementById('GUYS DOOR IS FRICKING STUCK').play()">GUYS DOOR IS FRICKING STUCK</button>
+            <button class="btn" onclick="document.getElementById('EGGS').play()">EGGS</button>
+            <button class="btn" onclick="document.getElementById('Oh...').play()">Oh...</button>
+            <button class="btn" onclick="document.getElementById('What').play()">What?</button>
+            <button class="btn" onclick="document.getElementById('Yay').play()">Yay!</button>
+            <button class="btn" onclick="document.getElementById('VAHAHAHAHAHHAHA').play()">VAHAHAHAHAHHAHA!</button>
+        </div>
+        <hr>
+        <a href="Changelogs.txt" target="_blank">
+            <button class="btn other" type="button">Changelogs</button>
+        </a>
+        <a href="Sources.txt" target="_blank">
+            <button class="btn other" type="button">Sources</button>
+        </a>
+        <a href="https://github.com/minhtridotnet/neuro-sama-soundboard" target="_blank">
+            <button class="btn other" type="button">Repo</button>
+        </a>
+        <div class="right" id="bgBtn" style="display: block;">
+            <button class="btn other right" title="Neuro-sama Room Dark.jpg" onclick="changeBg('Images/Neuro-sama\ Room\ Dark.jpg')">2</button>
+            <button class="btn other right" title="Neuro-sama Room.jpg" onclick="changeBg('Images/Neuro-sama\ Room.jpg')">1</button>
+            <button class="btn other right" title="None" onclick="changeBg('null')">0</button>
+            <p class="right">Bg Image:</p>
+        </div>
+        <script type="text/javascript">
+            function changeBg(imageUrl) {
+                document.body.style.backgroundImage = "url('" + imageUrl + "')";
+            }
+        </script>
+    </body>
+</html>
