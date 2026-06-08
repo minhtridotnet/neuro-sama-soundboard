@@ -167,3 +167,11 @@ Features:
 - Used the old <audio> element, which although cannot be overlapped, it added support for more old browsers
 - A basic background switcher, which should work for all browsers
 For this version, it will be shown in the changelog only when certain features are modified, not when adding sound effects.
+
+Version 1.3.4_1 (08/06/2026 12:49):
+Added Mmmm sound effect (from Neuro's 18/5 stream).
+Removed the test button.
+
+[Legacy] Version 1.1.9_L2 (08/06/2026 12:49):
+Slightly changed background color to match the pre-1.3.3 ones.
+Removed First Coffee font (because it was unused).
