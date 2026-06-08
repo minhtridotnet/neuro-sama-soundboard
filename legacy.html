@@ -6,10 +6,6 @@
         <link rel="icon" href="Images/icon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            @font-face {
-                font-family: 'First Coffee';
-                src: url('Fonts/First Coffee.ttf');
-            }
             /* Sobiscuit font: Used for the title of the website. It is the font used for the official Neuro-sama logo */
             @font-face {
                 font-family: 'Sobiscuit';
@@ -20,7 +16,7 @@
                 touch-action: manipulation;
             }
             body {
-                background-color: rgb(254, 169, 175);
+                background-color: rgb(255, 175, 172);
                 background-image: none;
                 background-size: cover;
                 background-position: center;
@@ -141,7 +137,7 @@
             <h1>Neuro-sama Soundboard</h1>
             <p class="legacy">Legacy</p>
         </div>
-        <p>Version 1.1.9_L1</p>
+        <p>Version 1.1.9_L2</p>
         <div>
             <!-- Loads audio -->
             <audio id="Filtered" src="Sounds/Neuro-sama Filtered.mp3" type="audio/mpeg"></audio>
@@ -159,6 +155,7 @@
             <audio id="What" src="Sounds/Neuro-sama What.mp3" type="audio/mpeg"></audio>
             <audio id="Yay" src="Sounds/Neuro-sama Yay.mp3" type="audio/mpeg"></audio>
             <audio id="VAHAHAHAHAHHAHA" src="Sounds/Neuro-sama VAHAHAHAHAHHAHA.mp3" type="audio/mpeg"></audio>
+            <audio id="Mmmm" src="Sounds/Neuro-sama Mmmm.mp3" type="audio/mpeg"></audio>
 
             <!-- Sound effect buttons -->
             <button class="btn" onclick="document.getElementById('Filtered').play()">Filtered</button>
@@ -176,6 +173,7 @@
             <button class="btn" onclick="document.getElementById('What').play()">What?</button>
             <button class="btn" onclick="document.getElementById('Yay').play()">Yay!</button>
             <button class="btn" onclick="document.getElementById('VAHAHAHAHAHHAHA').play()">VAHAHAHAHAHHAHA!</button>
+            <button class="btn" onclick="document.getElementById('Mmmm').play()">Mmmm</button>
         </div>
         <hr>
         <a href="Changelogs.txt" target="_blank">

@@ -20,7 +20,7 @@
                 <div>
                     <h2 class="left">Settings</h2>
                     <button class="btn settingsClose right" onclick="toggleSettings(false)">Close</button>
-                    <p class="right version">Version 1.3.4</p>
+                    <p class="right version">Version 1.3.4_1</p>
                     <div style="clear:both;"></div>
                 </div>
                 <hr>
@@ -41,7 +41,7 @@
                 <div>
                     <h2 class="left">Changelogs</h2>
                     <button class="btn settingsClose right" onclick="toggleChangelogs(false)">Back</button>
-                    <p class="right version">Version 1.3.4</p>
+                    <p class="right version">Version 1.3.4_1</p>
                     <div style="clear:both;"></div>
                 </div>
                 <hr>
@@ -54,7 +54,7 @@
                 <div>
                     <h2 class="left">Sources</h2>
                     <button class="btn settingsClose right" onclick="toggleSources(false)">Back</button>
-                    <p class="right version">Version 1.3.4</p>
+                    <p class="right version">Version 1.3.4_1</p>
                     <div style="clear:both;"></div>
                 </div>
                 <hr>
@@ -67,7 +67,7 @@
                 <div>
                     <h2 class="left">Styles</h2>
                     <button class="btn settingsClose right" onclick="toggleStyles(false)">Back</button>
-                    <p class="right version">Version 1.3.4</p>
+                    <p class="right version">Version 1.3.4_1</p>
                     <div style="clear:both;"></div>
                 </div>
                 <hr>
@@ -108,8 +108,8 @@
             <audio preload="auto"><source src="Sounds/Neuro-sama What.mp3" type="audio/mpeg"></audio>
             <audio preload="auto"><source src="Sounds/Neuro-sama Yay.mp3" type="audio/mpeg"></audio>
             <audio preload="auto"><source src="Sounds/Neuro-sama VAHAHAHAHAHHAHA.mp3" type="audio/mpeg"></audio>
+            <audio preload="auto"><source src="Sounds/Neuro-sama Mmmm.mp3" type="audio/mpeg"></audio>
         </div>
-        <audio id="Test" src="Sounds/Neuro-sama Someone tell Vedal there is a problem with my AI.mp3" type="audio/mpeg"></audio>
         <div> <!-- All sound effect buttons here, with its sound path and custom text (optional) -->
             <button class="btn" onclick="playSound(this, 'Sounds/Neuro-sama Filtered.mp3')">Filtered</button>
             <button class="btn" onclick="playSound(this, 'Sounds/Neuro-sama F-word.mp3')" custom-text="FUCK">F-word</button>
@@ -126,7 +126,7 @@
             <button class="btn" onclick="playSound(this, 'Sounds/Neuro-sama What.mp3')">What?</button>
             <button class="btn" onclick="playSound(this, 'Sounds/Neuro-sama Yay.mp3')">Yay!</button>
             <button class="btn" onclick="playSound(this, 'Sounds/Neuro-sama VAHAHAHAHAHHAHA.mp3')">VAHAHAHAHAHHAHA!</button>
-            <button class="btn" onclick="document.getElementById('Test').play()">Test</button> <!-- For testing purpose of old browsers -->
+            <button class="btn" onclick="playSound(this, 'Sounds/Neuro-sama Mmmm.mp3')">Mmmm</button>
         </div>
 
         <div>

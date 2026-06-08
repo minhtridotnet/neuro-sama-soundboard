@@ -10,7 +10,7 @@ If you have a very old browser (like 2013), try [this](https://minhtridotnet.git
 Currently there isn't much sounds yet, and I'm going to find more in the future.
 
 ---
-There are a total of 15 sound effects as of 26/05/2026
+There are a total of 16 sound effects as of 08/06/2026
 
 All of these sounds have its background noises removed using Ultimate Vocal Remover (UVR) app ran locally in my PC, specifically using the mel-band-roformer-deux model made by becruily. Also, all sound effects volumes are normalized to a maximum of -6dB.
 
